@@ -1,5 +1,9 @@
 # POLE, proxecto de Manuel Magán
 
+> [!IMPORTANT]  
+> DISCLAIMER: This was my final project for my web programming course. It was completed in just a few weeks, with minimal daily dedication, while I was learning to program in Python. This project marks my first complete application using FastAPI, PostgreSQL, Leaflet, and Bootstrap. 
+
+
 <div align="center">
     <img src="documentacion/img/logo-1.3-web.png" width="300" title="POLE logo" alt="POLE logo">
 </div>
