@@ -1,0 +1,76 @@
+<!-- ======================================================================= -->
+<!-- INICIO -->
+<!-- ======================================================================= -->
+{% extends 'base.html' %}
+
+<!-- ======================================================================= -->
+<!-- HEAD -->
+<!-- ======================================================================= -->
+
+{% block head %}
+<!-- css -->
+
+<!-- js -->
+
+<!-- title -->
+<title>Perfil | Pole</title>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- HEADER -->
+<!-- ======================================================================= -->
+
+{% block header %}
+<h1>Perfil | Pollen</h1>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- BODY -->
+<!-- ======================================================================= -->
+{% block body %}
+<h2>O meu perfil</h2>
+<div>
+    <dl>
+        <dt>Nome</dt>
+        <dd>{{ user.name }}</dd>
+        <dt>Apelidos</dt>
+        <dd>{{ user.lastname }}</dd>
+        <dt>Nome de usuario</dt>
+        <dd>{{ user.username }}</dd>
+        <dt>Correo electrónico</dt>
+        <dd>{{ user.email }}</dd>
+        <dt>Localización por defecto</dt>
+        <dd>{{ user.location.name }}</dd>
+        <dt>Data de nacemento</dt>
+        <dd>{{ user.birthdate }}</dd>
+    </dl>
+
+    <a href="/user/update" class="btn btn-secondary"><i class="bi bi-pencil-square"></i> Editar perfil</a>
+</div>
+<div>
+    <h3>Actividade</h3>
+    <a href="/userlogs" class="btn btn-secondary"
+        ><i class="bi bi-journal-text"></i> Ver o meu historial de rexistros</a
+    >
+</div>
+<div>
+    <h3>Configuración</h3>
+    <p>
+        <a
+            href="/user/update/config/locations"
+            class="btn btn-secondary"
+            id="user-update-locs"
+            ><i class="bi bi-geo-alt"></i> Actualizar localizacións secundarias</a
+        >
+    </p>
+    <p>
+        <a href="/logout" class="btn btn-secondary"
+            ><i class="bi bi-box-arrow-in-left"></i> Fechar sesión</a
+        >
+    </p>
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- FIN BODY -->
+<!-- ----------------------------------------------------------------------- -->
+{% endblock %}

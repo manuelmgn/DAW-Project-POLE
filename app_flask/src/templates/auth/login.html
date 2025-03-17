@@ -1,0 +1,69 @@
+{%extends 'auth/auth-base.html' %}
+
+<!-- ======================================================================= -->
+<!-- HEAD -->
+<!-- ======================================================================= -->
+{% block head %}
+<!-- js -->
+<script src="{{ url_for('static', filename='js/fAuthUser.js') }}"></script>
+<!-- title -->
+<title>Iniciar sesión | Pole</title>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- BODY -->
+<!-- ======================================================================= -->
+{% block body %}
+
+<div class="grid-login">
+    <div class="login-images">
+        <img
+            class="login-banner"
+            src="/static/images/logo-1.3-banner.png"
+            alt="Pollen logo"
+        />
+    </div>
+    <div class="login-text">
+        <h1>Non estás dentro?</h1>
+        <div class="login-form" id="login">
+            <form method="post" action="{{ url_for('auth_bp.login') }}">
+                <div class="form-floating my-3">
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Nome de usuario"
+                        required
+                    />
+                    <label for="username">Nome de usuario</label>
+                </div>
+                <div class="form-floating my-3">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Contrasinal"
+                        required
+                    />
+                    <label for="password">Contrasinal</label>
+                </div>
+                <div class="my-3">
+                    {% with messages =
+                    get_flashed_messages(with_categories=true) %} {% if messages
+                    %} {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %}
+                </div>
+                <button type="submit" class="btn btn-primary my-3">
+                    Entrar
+                </button>
+            </form>
+        </div>
+        <span>Se non tes conta → <a href="/register">rexístrate</a>.</span>
+    </div>
+</div>
+{% endblock %}
