@@ -1,0 +1,43 @@
+/* ========================================================================== */
+/* VARIÁBEIS */
+/* ========================================================================== */
+:root {
+    --esquina-redonda: 3px;
+    --bs-border-radius: var(--esquina-redonda) !important;
+
+    --cor1: #34a900;
+    --cor2: #849700;
+    --cor3: #b18d00;
+    --cor4: #df6800;
+    --cor5: #e82214;
+    --verde: var(--cor1);
+    --vermello: var(--cor5);
+    --vermello-transp: #e8221446;
+    --destaque-transp: #5a5a5a24;
+
+    --transition: all ease 0.4s;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('/static/fonts/futura.woff2') format('woff2'),
+        /* Super Modern Browsers */ url('/static/fonts/futura.woff')
+            format('woff'),
+        /* Pretty Modern Browsers */ url('/static/fonts/futura.ttf')
+            format('truetype'); /* Safari, Android, iOS */
+}
+
+/* ========================================================================== */
+/* SOBREESCRITURAS BOOTSTRAP */
+/* ========================================================================== */
+
+/* ========================================================================== */
+/* ELEMENTOS PRINCIPAIS */
+/* ========================================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Futura', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

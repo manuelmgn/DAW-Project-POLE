@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block head %}
+<!-- css -->
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+/>
+<!-- js -->
+
+<script src="{{ url_for('static', filename='js/fIndex.js') }}"></script>
+
+<title>Previsión meteorolóxica | Pole</title>
+{% endblock %}
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- HEADER -->
+<!-- ----------------------------------------------------------------------- -->
+{% block header %}
+<h1>Previsión meteorolóxica</h1>
+{% endblock %} 
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- BODY -->
+<!-- ----------------------------------------------------------------------- -->
+{% block body %}
+
+<h2>Pronóstico meteorolóxico</h2>
+
+{% for location in locations %}
+{% include 'various/forecast-location.html' %}
+{%endfor%} 
+ {% endblock %}

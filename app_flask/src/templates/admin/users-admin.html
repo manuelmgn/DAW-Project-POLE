@@ -1,0 +1,69 @@
+<!-- ======================================================================= -->
+<!-- INICIO -->
+<!-- ======================================================================= -->
+{% extends 'base.html' %}
+
+<!-- ======================================================================= -->
+<!-- HEAD -->
+<!-- ======================================================================= -->
+
+{% block head %}
+<!-- css -->
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/admin.css') }}"
+/>
+
+<!-- js -->
+<!-- title -->
+<title>Admin area | Pole</title>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- HEADER -->
+<!-- ======================================================================= -->
+
+{% block header %}
+<h1>Admin area</h1>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- BODY -->
+<!-- ======================================================================= -->
+{% block body %}
+
+<div class="listado">
+    <div class="cabeceira">
+        <div>Username</div>
+        <div>Email</div>
+        <div>Enabled?</div>
+        <div>Actions</div>
+    </div>
+    {%for user in usuarios%}
+    <div class="usuario">
+        <span>{{user.username}}</span>
+        <div>{{user.email}}</div>
+        <div>{{user.enabled}}</div>
+        <div class="input-group">
+            <a
+                class="btn btn-outline-warning btn-sm"
+                href="/admin/users/deactivate/{{user.id_user}}"
+                role="button"
+                >{% if user.enabled %}Desactivar{%else%}Activar{%endif%}</a
+            >
+            <a
+                class="btn btn-outline-danger btn-sm"
+                href="/admin/users/delete/{{user.id_user}}"
+                role="button"
+                >Eliminar</a
+            >
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- FIN BODY -->
+<!-- ----------------------------------------------------------------------- -->
+{% endblock %}

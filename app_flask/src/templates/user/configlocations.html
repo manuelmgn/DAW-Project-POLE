@@ -1,0 +1,66 @@
+<!-- ======================================================================= -->
+<!-- INICIO -->
+<!-- ======================================================================= -->
+{% extends 'base.html' %}
+
+<!-- ======================================================================= -->
+<!-- HEAD -->
+<!-- ======================================================================= -->
+
+{% block head %}
+<!-- css -->
+
+<!-- js -->
+<script src="{{ url_for('static', filename='js/fAuthUser.js') }}"></script>
+<!-- title -->
+<title>Editar perfil | Pole</title>
+
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- HEADER -->
+<!-- ======================================================================= -->
+
+{% block header %}
+<h1>Editar perfil - Localizacións</h1>
+{% endblock %}
+
+<!-- ======================================================================= -->
+<!-- BODY -->
+<!-- ======================================================================= -->
+{% block body %}
+
+<form method="POST" action="{{ url_for('user_bp.update_user_locations') }}">
+    {{ form.hidden_tag() }}
+    
+    <div class="form-floating mb-3">
+        {{form.location(class="form-control", placeholder="Localización")}}
+        {{form.location.label}}
+        <div id="suggestions"></div>
+        {{form.coordinates(class="d-none")}}
+    </div>
+    <div class="input-group">
+        {{form.submit(class="btn btn-primary")}}
+        <input type="reset" value="Restabelecer" class="btn btn-secondary" />
+    </div>
+</form>
+
+<div class="my-3">
+    
+    {% if form.location.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ form.location.errors[0] }}
+    </div>
+    {% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- FIN BODY -->
+<!-- ----------------------------------------------------------------------- -->
+{% endblock %}

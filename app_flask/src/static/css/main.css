@@ -1,0 +1,240 @@
+/* ========================================================================== */
+/* COMPOÑENTES DA ESTRUTURA PRINCIPAL */
+/* ========================================================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+nav {
+    grid-area: nav;
+}
+
+header {
+    grid-area: header;
+    max-width: 100%;
+    padding: 1.5rem 0rem;
+}
+
+main {
+    grid-area: main;
+}
+
+header,
+h1 {
+    display: none;
+}
+
+.logo {
+    grid-area: logo;
+    max-width: 100%;
+    padding: 1.7rem;
+    text-align: center;
+    transition: var(--transition);
+    border-radius: var(--esquina-redonda);
+    img {
+        margin: auto;
+    }
+}
+
+.logo :hover {
+    box-shadow: 0px 0px 10px 10px #70707030;
+    transition: var(--transition);
+}
+
+/* -------------------------------------------------------------------------- */
+/* BARRA DE NAVEGACIÓN */
+/* -------------------------------------------------------------------------- */
+
+nav li {
+    list-style: none;
+}
+
+.nav-link {
+    display: grid;
+}
+
+.nav-ul {
+    li a {
+        border-radius: var(--esquina-redonda);
+        transition: var(--transition);
+    }
+    li a:hover {
+        background-color: #9c9c9c1f;
+        box-shadow: 0px 0px 5px 5px #42424229;
+        transition: var(--transition);
+    }
+}
+
+.nav-destaque {
+    a {
+        color: white;
+        background-color: var(--vermello);
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* MEDIA QUERIES */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    body {
+        display: grid;
+        grid-template-rows: 7vh 86vh 5vh;
+        row-gap: 1vh;
+        column-gap: 1vw;
+        grid-template-areas:
+            'logo'
+            'main'
+            'nav';
+        padding: 1px 2rem 6rem 2rem;
+    }
+
+    .logo img {
+        height: 3vh;
+        width: auto;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--bs-body-bg);
+        z-index: 1500;
+        box-shadow: 1px 1px 10px 10px #0000003d;
+        transition: var(--transition);
+    }
+
+    nav:hover {
+        box-shadow: 1px 1px 15px 15px #0000003d;
+        transition: var(--transition);
+    }
+
+    .nav-ul {
+        height: 8vh;
+        width: 95%;
+        margin: auto;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    .nav-titulo {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 15vw 80vw;
+        grid-template-rows: 5vh 90vh;
+        row-gap: 2vh;
+        column-gap: 3vw;
+        grid-template-areas:
+            '...    logo'
+            'nav    main';
+    }
+
+    .logo img {
+        height: 3vh;
+        width: auto;
+    }
+
+    nav {
+        border-right: 1px solid #d3d3d321;
+    }
+
+    .nav-ul {
+        width: 80%;
+        margin: auto;
+        padding: 0;
+        li a {
+            display: grid;
+            grid-template-rows: 2.5rem;
+            align-items: center;
+            gap: 0.6rem;
+            max-width: 80%;
+            padding: 1rem;
+            margin: auto;
+            span {
+                text-align: left;
+            }
+        }
+    }
+
+    .nav-titulo {
+        display: none;
+    }
+
+    .nav-destaque {
+        margin-top: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        max-width: 1500px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 25% 67%;
+        grid-template-rows: 7vh 90vh;
+        row-gap: 1vh;
+        column-gap: 5%;
+        grid-template-areas:
+            '...    logo'
+            'nav    main';
+    }
+
+    nav {
+        border-right: 1px solid #d3d3d321;
+    }
+
+    .logo img {
+        height: 4vh;
+        width: auto;
+    }
+
+    .nav-ul {
+        width: 80%;
+        margin: auto;
+        padding: 0;
+        li a {
+            display: grid;
+            grid-template-columns: 1.5fr 3fr;
+            grid-template-rows: 2.5rem;
+            align-items: center;
+            gap: 0.6rem;
+            max-width: 85%;
+            margin: auto;
+            padding: 1rem 1.5rem 1rem 0.5rem;
+            span {
+                text-align: left;
+            }
+        }
+    }
+
+    .nav-destaque {
+        margin-top: 2rem;
+    }
+}
+
+/* ========================================================================== */
+/* ELEMENTOS REPETITIVOS */
+/* ========================================================================== */
+
+h3 {
+    margin: 1.5rem 0 1rem 0 !important;
+}
+
+#adm {
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+}

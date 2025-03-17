@@ -1,0 +1,151 @@
+/* ========================================================================== */
+/* XERAL */
+/* ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* Selectores */
+/* -------------------------------------------------------------------------- */
+
+#nome {
+    grid-area: nome;
+}
+#apelido {
+    grid-area: apelido;
+}
+#email {
+    grid-area: email;
+}
+#username {
+    grid-area: username;
+}
+#birthdate {
+    grid-area: birthdate;
+}
+#pass1 {
+    grid-area: pass1;
+}
+#pass2 {
+    grid-area: pass2;
+}
+#alerxias {
+    grid-area: alerxias;
+}
+#locs {
+    grid-area: locs;
+}
+#submit {
+    grid-area: submit;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Xeral */
+/* -------------------------------------------------------------------------- */
+
+.login-text {
+    padding: 3rem 3.1rem;
+}
+
+.login-banner {
+    width: 100%;
+}
+
+footer {
+    color: lightgray;
+}
+
+img {
+    border-top-left-radius: var(--esquina-redonda);
+    border-top-right-radius: var(--esquina-redonda);
+}
+
+@media only screen and (max-width: 350px) {
+    .grid-login {
+        padding: 0;
+    }
+    .login-text {
+        padding: 1rem 1rem;
+    }
+}
+
+/* ========================================================================== */
+/* MEDIA QUERIES */
+/* ========================================================================== */
+
+@media only screen and (max-width: 700px) {
+    body {
+        text-align: center !important;
+    }
+    .grid-login {
+        display: grid;
+        grid-auto-flow: row;
+        margin: auto;
+        height: auto;
+        padding: 1vh;
+    }
+    #rexistro form {
+        display: grid;
+        gap: 1rem;
+        grid-auto-flow: row;
+        grid-template-areas:
+            'nome'
+            'apelido'
+            'email'
+            'username'
+            'birthdate'
+            'pass1'
+            'pass2'
+            'alerxias'
+            'alerxias'
+            'locs'
+            'submit';
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-rows: 95vh 3vh;
+        gap: 2vh;
+    }
+    .grid-login {
+        display: grid;
+        grid-auto-flow: row;
+        margin: auto;
+        width: 70vw;
+        max-width: 700px;
+        height: auto;
+        padding: 0 0 1vh 0;
+        border-radius: var(--esquina-redonda);
+        box-shadow: 0px 0px 10vw 20px var(--vermello-transp);
+        transition: var(--transition);
+    }
+    #rexistro form {
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:
+            'nome       apelido'
+            'email      email'
+            'username   birthdate'
+            'pass1      alerxias'
+            'pass2      alerxias'
+            'locs       locs'
+            'submit     ...';
+    }
+}
+
+/* ========================================================================== */
+/* SOBREESCRITURAS BOOTSTRAP */
+/* ========================================================================== */
+
+.row {
+    --bs-gutter-x: 0 !important;
+    gap: 1rem;
+}
+
+select {
+    height: auto !important;
+}
