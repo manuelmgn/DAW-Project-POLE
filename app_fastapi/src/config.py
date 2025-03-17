@@ -1,3 +1,0 @@
-"""Configuración global"""
-
-API_KEY="J6j0bPa3AXe7nILlh24TaCWo6L2jV41YtokIbExs9BMUH2EYqTYPLisZqxjIlBtMab8pYeQ8tLZrWzuvdh4Al9DxajhoBW23fUUWqeeVl9MKpODOWbENmqOE9qj2dZ6m"
